@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
-@section('title', 'Landing')
+@section('title', 'Landing Page')
+@section('')
 
 @section('content')
 <section class="py-10">

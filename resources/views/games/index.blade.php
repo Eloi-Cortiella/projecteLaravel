@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Videojocs')
+@section('title', 'CRUD Videojocs')
 
 @section('content')
 <div class="flex items-center justify-between gap-4 mb-6">

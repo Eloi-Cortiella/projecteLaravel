@@ -32,7 +32,7 @@
 
 <footer class="border-t bg-white">
     <div class="container mx-auto px-4 py-4 text-sm text-gray-600">
-        Creat per: <strong>EL TEU NOM</strong> — DAM
+        Creat per: <strong>Eloi Cortiella </strong> 2n DAM — 2025/2026
     </div>
 </footer>
 </body>
