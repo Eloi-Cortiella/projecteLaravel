@@ -12,10 +12,10 @@
 </div>
 
 <div class="border rounded p-4 max-w-xl grid gap-2">
-    <div><span class="font-semibold">Plataforma:</span> {{ $movie->platform }}</div>
-    <div><span class="font-semibold">Any:</span> {{ $movie->release_year }}</div>
-    <div><span class="font-semibold">Preu:</span> {{ number_format((float)$movie->price, 2) }} €</div>
-    <div><span class="font-semibold">Descripció:</span> {{ $movie->description }}</div>
+    <div><span class="font-semibold">Director:</span> {{ $movie->director }}</div>
+    <div><span class="font-semibold">Any de llançament:</span> {{ $movie->release_year }}</div>
+    <div><span class="font-semibold">Gènere:</span> {{ $movie->genre }}</div>
+    <div><span class="font-semibold">Puntuació:</span> {{ $movie->rating }}</div>
 </div>
 
 <form class="mt-6" method="POST" action="{{ route('movies.destroy', $movie) }}"

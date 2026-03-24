@@ -13,10 +13,10 @@
         <thead class="bg-gray-50">
         <tr class="text-left">
             <th class="p-3">Títol</th>
-            <th class="p-3">Plataforma</th>
+            <th class="p-3">Director</th>
             <th class="p-3">Any</th>
-            <th class="p-3">Descripció</th>
-            <th class="p-3">Preu</th>
+            <th class="p-3">Gènere</th>
+            <th class="p-3">Puntuació</th>
             <th class="p-3">Accions</th>
         </tr>
         </thead>
@@ -24,20 +24,20 @@
         @forelse($movies as $movie)
             <tr class="border-t">
                 <td class="p-3 font-medium">{{ $movie->title }}</td>
-                <td class="p-3">{{ $movie->platform }}</td>
+                <td class="p-3">{{ $movie->director }}</td>
                 <td class="p-3">{{ $movie->release_year }}</td>
-                <td class="p-3">{{ $movie->description }}</td>
-                <td class="p-3">{{ number_format((float)$movie->price, 2) }} €</td>
+                <td class="p-3">{{ $movie->genre }}</td>
+                <td class="p-3">{{ $movie->rating }}</td>
                 <td class="p-3">
                     <div class="flex flex-wrap gap-2">
-                        <a class="underline" href="{{ route('movies.show', $movie) }}">Show</a>
-                        <a class="underline" href="{{ route('movies.edit', $movie) }}">Edit</a>
+                        <a class="underline" href="{{ route('movies.show', $movie) }}">Veure    Detalls</a>
+                        <a class="underline" href="{{ route('movies.edit', $movie) }}">Editar</a>
 
                         <form method="POST" action="{{ route('movies.destroy', $movie) }}"
                               onsubmit="return confirm('Vols eliminar aquesta pel·lícula?');">
                             @csrf
                             @method('DELETE')
-                            <button class="underline">Delete</button>
+                            <button class="underline">Eliminar</button>
                         </form>
                     </div>
                 </td>

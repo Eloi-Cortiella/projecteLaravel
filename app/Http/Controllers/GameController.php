@@ -61,12 +61,14 @@ class GameController extends Controller
     {
         $data = $request->validate([
             'title' => ['required', 'string', 'max:255'],
-            'platform' => ['required', 'string', 'max:255'],
+            'platform' => ['required', 'array'],
+            'platform.*' => ['string', 'max:255'],
             'release_year' => ['required', 'integer', 'min:1950', 'max:2100'],
             'price' => ['required', 'numeric', 'min:0'],
             'is_multiplayer' => ['nullable', 'boolean'],
         ]);
 
+        $data['platform'] = implode(', ', $data['platform']);
         // checkbox safe parse
         $data['is_multiplayer'] = $request->boolean('is_multiplayer');
 

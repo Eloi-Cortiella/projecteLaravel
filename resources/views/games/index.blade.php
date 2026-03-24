@@ -30,14 +30,14 @@
                 <td class="p-3">{{ $game->is_multiplayer ? 'Sí' : 'No' }}</td>
                 <td class="p-3">
                     <div class="flex flex-wrap gap-2">
-                        <a class="underline" href="{{ route('games.show', $game) }}">Show</a>
-                        <a class="underline" href="{{ route('games.edit', $game) }}">Edit</a>
+                        <a class="underline" href="{{ route('games.show', $game) }}">Veure Detalls</a>
+                        <a class="underline" href="{{ route('games.edit', $game) }}">Editar</a>
 
                         <form method="POST" action="{{ route('games.destroy', $game) }}"
                               onsubmit="return confirm('Vols eliminar aquest videojoc?');">
                             @csrf
                             @method('DELETE')
-                            <button class="underline">Delete</button>
+                            <button class="underline">Eliminar</button>
                         </form>
                     </div>
                 </td>
