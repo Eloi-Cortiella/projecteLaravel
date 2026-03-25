@@ -97,7 +97,7 @@ Per demostrar el funcionament cal que provis tu mateix visualment el següent:
 Ves a afegir una nova pel·lícula o videojoc. Fixa't com ara els formularis tenen grups de *checkboxes* i permeten marcar mútiples valors, i comença el registre correcte.
 
 ![Creació Videjoc UI](resources/img/Selecció_1542.png)
-![Creació Peliucla UI]()
+![Creació Peliucla UI](resources/img/Selecció_1548.png)
 
 **2. Visualització (Read/Index):**
 Accedeix de nou i fixa't a la taula llistada com el Gènere o la Plataforma s'ha emmagatzemat correctament amb separacions per coma: "Steam, PC" o "Slasher, Terror". Això valida l'`implode()` del Controller. 
@@ -117,37 +117,3 @@ Si ataques la opció _Edit_ del crud en qualsevol element fixat veuràs un detal
 ![Editar Pelicula UI](resources/img/Selecció_1546.png)
 ![Editar Videjoc UI](resources/img/Selecció_1547.png)
 ---
-
-## 4. Comprovacions amb Tinker
-
-Tinker és ideal en aquesta app per manipular o extreure contingut des de la base directament usant la interfície de text.
-
-**Ús de comandes per validar les múltiples dades:**
-```bash
-php artisan tinker
-```
-
-```php
-// Comprovar si tenim Videojocs registrats i que les plataformes s'han concatenat
-\App\Models\Game::first();
-/* Sortida esperada:
-App\Models\Game {#... 
-    id: 1,
-    title: "Game Title",
-    platform: "PC, Steam, Nintendo Switch", <--- Llistat correcte!
-    release_year: 2022, ...
-}
-*/
-
-// Crear i provar el registre directe d'una nova pel·lícula
-$movie = new \App\Models\Movie();
-$movie->title = "Interstellar";
-$movie->director = "Christopher Nolan";
-$movie->release_year = 2014;
-$movie->genre = "Ciència Ficció, Aventura, Drama";
-$movie->rating = 8.5;
-$movie->save();
-
-// I fem crida a la base de dades local i verificació des de Tinker 
-\App\Models\Movie::where('title', 'Interstellar')->first();
-```
